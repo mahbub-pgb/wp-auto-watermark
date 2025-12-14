@@ -1,0 +1,233 @@
+/* Images Table */
+.images-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.images-table thead {
+    background: #f8f9fa;
+}
+
+.images-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.images-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.images-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.images-table img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+.status-processing {
+    background: #fff3cd;
+    color: #856404;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.status-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-failed {
+    background: #f8d7da;
+    color: #842029;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Progress Bar Wrapper */
+.progress-bar-wrapper {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2271b1 0%, #135e96 100%);
+    transition: width 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Progress Text */
+.progress-text {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.progress-text span {
+    color: #2271b1;
+}
+
+/* Progress Status */
+#progress-status {
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #2271b1;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1d2327;
+}
+
+/* Results Container */
+#results-container {
+    margin-top: 25px;
+}
+
+#results-summary .notice {
+    margin: 0 0 15px 0;
+}
+
+#failed-images ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#failed-images li {
+    margin: 5px 0;
+    color: #842029;
+}
+
+/* Tab Content */
+.tab-content {
+    padding: 20px 0;
+}
+
+/* Buttons */
+#watermark-controls {
+    display: flex;
+    gap: 10px;
+}
+
+#watermark-controls .button {
+    padding: 8px 16px;
+    height: auto;
+}
+
+/* Watermarked Images Grid */
+#watermarked-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#watermarked-images a {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+#watermarked-images a:hover {
+    border-color: #2271b1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+#watermarked-images img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .images-table {
+        font-size: 14px;
+    }
+    
+    .images-table th,
+    .images-table td {
+        padding: 8px 10px;
+    }
+    
+    .progress-bar {
+        height: 24px;
+    }
+    
+    .progress-text {
+        font-size: 14px;
+    }
+    
+    #watermark-controls {
+        flex-direction: column;
+    }
+    
+    #watermark-controls .button {
+        width: 100%;
+    }
+}
